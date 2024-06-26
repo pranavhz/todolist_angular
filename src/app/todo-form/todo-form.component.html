@@ -1,0 +1,23 @@
+<form class="mt-3 mb-4" #todoForm="ngForm" (ngSubmit)="submitForm()">
+  <div class="row" style="display: flex; align-items: center">
+    <div class="col-sm-12 col-md-8">
+      <label for="task">Task</label>
+      <input
+        type="text"
+        id="task"
+        placeholder="Enter task"
+        class="form-control"
+        [(ngModel)]="todo.task"
+        required
+        name="task"
+      />
+    </div>
+
+    <div class="col-sm-12 col-md-4 mt-4">
+      <button class="btn btn-primary" type="submit"
+      [disabled]="!todoForm.form.valid">
+        Save
+      </button>
+    </div>
+  </div>
+</form>

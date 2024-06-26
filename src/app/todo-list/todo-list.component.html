@@ -1,0 +1,27 @@
+<ul class="list-group">
+  @for (item of todos; track item.task) {
+  <li
+    class="list-group-item"
+    style="display: flex; justify-content: space-between"
+  >
+    <span>{{ item.task }}</span>
+    <div>
+      <button
+        class="btn btn-sm btn-dark"
+        style="margin-right: 5px"
+        type="button"
+        (click)="onEdit(item)"
+      >
+        Edit
+      </button>
+      <button
+        class="btn btn-sm btn-danger"
+        type="button"
+        (click)="onDelete(item)"
+      >
+        Delete
+      </button>
+    </div>
+  </li>
+  }
+</ul>
